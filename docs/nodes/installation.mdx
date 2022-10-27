@@ -24,18 +24,6 @@ You'll find below the available ways of getting the needed `okp4d` binary to sta
 
 You'll find the released binaries on the [GitHub repository](https://github.com/okp4/okp4d/releases). These are statically linked builds, so be careful to choose the right binary for your system (i.e. `linux/amd64` or `linux/arm64`). Checksums are also provided if you wish to verify the integrity of the download.
 
-To easily install `okp4d` from a GitHub release you can use this [oneliner script](https://github.com/jpillora/installer):
-
-<CodeBlock language="bash">
-curl https://i.jpillora.com/okp4/okp4d@{data.okp4dVersion}! | bash
-</CodeBlock>
-
-:::caution
-
-By principle, take the time to verify the checksum manually.
-
-:::
-
 ## Docker
 
 The `okp4d` binary can be invoked directly through the following docker image:
@@ -50,7 +38,7 @@ _Build once, deploy anywhere_: The docker image is a multi-arch build supporting
 
 :::
 
-## Build from source
+## Build from source (prefered)
 
 ### Prerequisites
 
@@ -63,9 +51,14 @@ _Build once, deploy anywhere_: The docker image is a multi-arch build supporting
 Clone the [okp4/okp4d](https://github.com/okp4/okp4d) repo:
 
 ```bash
-git clone git@github.com:okp4/okp4d.git
+git clone git@github.com:okp4/okp4d.git 
 cd okp4d
 ```
+
+Checkout the release tag :
+<CodeBlock language="bash">
+git checkout {data.okp4dVersion}
+</CodeBlock>
 
 Install `okp4d` using the provided `Makefile`:
 
@@ -84,3 +77,18 @@ You should get an output similar to:
 <CodeBlock language="text">
 {data.okp4dVersion}
 </CodeBlock>
+
+
+## Deploy from release
+
+To easily install `okp4d` from a GitHub release you can use this [oneliner script](https://github.com/jpillora/installer):
+
+<CodeBlock language="bash">
+curl https://i.jpillora.com/okp4/okp4d@{data.okp4dVersion}! | bash
+</CodeBlock>
+
+:::caution
+
+By principle, take the time to verify the checksum manually.
+
+:::
